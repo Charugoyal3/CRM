@@ -27,7 +27,8 @@ const postsubass = async (req, res) => {
      const subasso = await Subass.find({});
 
     // console.log(ass.length);
-    subass.userid="jyo_0"-ass.length+subasso.length;
+    var size=ass.length+subasso.length
+    subass.userid="jyo123"+size;
     
     
     try {

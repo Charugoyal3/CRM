@@ -1,9 +1,9 @@
-const plotallot = require("../models/plotallot.js");
+const Addplot = require("../models/addplot.js");
 const Registration = require("../models/registration.js");
 
 const getplotallot = async (req, res) => {
     const ass = await Registration.find({});
-    console.log(ass);
+    // console.log(ass);
     if (ass) res.status(200).render('plotallot', {
       
         ass:ass,
@@ -13,7 +13,7 @@ const getplotallot = async (req, res) => {
 };
 
 const postplotallot = async (req, res) => {
-    var data = new plotallot(req.body);
+    var data = new Addplot(req.body);
   
    try{
        const item= await data.save();

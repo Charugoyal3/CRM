@@ -423,11 +423,11 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <th>Total Amount</th>
                                             <th>Payment</th>
                                             <th>Net Paybale amount</th>
-                                            <th>hu</th>
+                                            <th>hello</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <% plot.forEach(function(plot,plotsub){%>
+                                        <% plot.forEach(function(plot){%>
                                             <tr>
                                                 <td>
                                                     <%= plot.id %>
@@ -456,7 +456,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                                         %>
                                                 </td>
                                                 <td>
-                                                    <%=plotsub.percentage%>
+                                                    <%=plot.percentage%>
                                                 </td>
                                             </tr>
                                             <% })%>

@@ -20,15 +20,15 @@ var addplotModel = new mongoose.Schema(
         plotsize: {
             type:String
         },
-        // amount:{
-        //     type:Number
-        // },
-        //percentage:{
-        //     type:Number
-        // },
-        // name:{
-        //     type:String
-        // }
+        amount:{
+            type:Number
+        },
+        percentage:{
+            type:Number
+        },
+        names:[{
+            type:String
+        }]
     },
     {
         timestamps:true

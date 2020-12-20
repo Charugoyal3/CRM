@@ -1,8 +1,14 @@
 const mongoose = require("mongoose");
 
 var adminloginModel = new mongoose.Schema({
- email:String,
- password:String
+ email:{
+     type:String,
+     required : true,
+ },
+ password:{
+     type:String,
+     required : true
+ }
 
 })
 

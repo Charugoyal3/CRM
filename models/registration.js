@@ -7,17 +7,21 @@ var registrationModel = new mongoose.Schema(
             type:String
         },
         email: {
-            type:String
+            type:String,
+            required : "Email address is required"
         },
         pass: {
-            type:String
+            type:String,
+            required : "Password is required"
         },
         cpass: {
-            type:String
+            type:String,
+            required : "Confirm password is required"
         },
 
         name:{
-            type:String
+            type:String,
+            required : "Name is Required"
         },
         father:{
             type:String

@@ -3,8 +3,6 @@ const Registration = require("../models/registration.js");
 const Admin = require("../models/admin.js");
 const Subass = require("../models/subass.js");
 const Addplot = require("../models/addplot.js");
-const Plotallot = require("../models/plotallot.js");
-const Plotallotsub = require("../models/plotallotsub.js");
 
 const getadmin= async (req,res) => {
     const ass = await Registration.find({});
@@ -22,7 +20,6 @@ const getassadmin= async (req,res) => {
            reg:reg,
            subass: reg.subass
        });
-      //  console.log(reg._id);
  
    } catch (err) {
        res.send("No work found!" + err);
@@ -32,16 +29,13 @@ const getadminlogin= function(req,res){
     res.render("adminlogin");
 }
 
+// Single associates which which plot alloted
 const getteamearning=async(req,res)=>{
-    
     const reg = await Registration.findById(
         req.params.registrationId
     )
-    const plot = await Plotallot.find({name:reg.name});
+    const plot = await Addplot.find({name:reg.name});
     
-    //console.log(plot);
-    // console.log(reg.name);
-    // console.log(plot[i].name);
     if (plot,reg) res.status(200).render('assearning', {
         plot:plot,
         size:plot.length,
@@ -54,20 +48,6 @@ const getteamearning=async(req,res)=>{
 
 
 const postadminlogin = async (req,res,next) =>{
-    // User.findOne({ email:req.body.email},function(err,user){
-    //     if(err){console.log('Error in signin'); return;}
-    //     if(user){
-    //         if(user.password!=req.body.pass){
-    //             return res.send("Pass incorrect");
-    //         }
-    //         //handle session creation
-    //         if(user.usertype==admin){
-    //             //redirect to admin dashboard
-    //         }else if(user.usertype==subassociare{}){}
-    //         return res.redirect("index");
-
-    //     }
-    
   Admin.findOne({ email:req.body.email},function(err,user){
             if(err){console.log('Error in signin'); return;}
             if(user){
@@ -80,7 +60,7 @@ const postadminlogin = async (req,res,next) =>{
             }
             else{
               Registration.findOne({ userid:req.body.email},function(err,user){
-                  console.log(req.body.userid);
+                //   console.log(req.body.userid);
                 if(err){console.log('Error in signin'); return;}
                 if(user){
                     if(user.pass!=req.body.pass){
@@ -110,13 +90,13 @@ const postadminlogin = async (req,res,next) =>{
         });
 }
 
+//Form to allot plot to subbassociates
 const getplotallotsub = async (req, res) => {
     const subass = await Subass.find({});
     const plot = await Addplot.find({});
     const reg = await Registration.findById(
         req.params.registrationId
     )
-    // console.log(plot);
     if (reg,subass,plot) res.status(200).render('plotallotsub', {
       
         subass:subass,
@@ -127,15 +107,14 @@ const getplotallotsub = async (req, res) => {
     
 };
 
+//Data save of form to allot plot to subassociates
 const postplotallotsub = async (req, res) => {
-    var data = new Plotallotsub(req.body);
+    var data = new Addplot(req.body);
     const reg = await Registration.findById(
         req.params.registrationId
     )
-//   console.log(reg);
    try{
        const item= await data.save();
-    //    res.send("save");
        res.redirect("/index/"+reg._id+"/plotallotsubstruct");
    }
     catch(err){
@@ -144,13 +123,13 @@ const postplotallotsub = async (req, res) => {
 
 };
 
+//Display of plot allotment to subassociates
 const getplotallotsubstruct = async (req, res) => {
     const subass = await Subass.find({});
-    const plot = await Plotallotsub.find({});
+    const plot = await Addplot.find({});
     const reg = await Registration.findById(
         req.params.registrationId
     )
-    console.log(plot);
     if (reg,subass,plot) res.status(200).render('plotallotsubstruct', {
       
         subass:subass,
