@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+</head>
+
+<body>
+    <!-- multistep form -->
+
+    <form id="msform" action="<%= reg._id%>/subass" method="POST">
+        <!-- progressbar -->
+
+        <ul id="progressbar">
+            <li class="active">Account Setup</li>
+            <li>Personal Details</li>
+            <li>Nominee Details</li>
+            <li>Social Profiles</li>
+            <li>Designation</li>
+
+        </ul>
+        <!-- fieldsets -->
+        <fieldset>
+            <h2 class="fs-title">Create your account for Sub Associate</h2>
+            <h3 class="fs-subtitle">This is step 1</h3>
+            <input type="text" name="email" placeholder="Email" />
+
+            <input type="password" name="pass" placeholder="Password" />
+            <input type="password" name="cpass" placeholder="Confirm Password" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Personal Details</h2>
+            <h3 class="fs-subtitle">About Yourself</h3>
+            <input type="text" name="name" placeholder="Name" />
+            <input type="text" name="father" placeholder="Father Name" />
+            <input type="text" name="mother" placeholder="Mother Name" />
+            <input type="date" id="birthday" name="birthday">
+            <input type="number" name="mobile" placeholder="Mobile Number" />
+            <input type="text" name="current" placeholder="Current Address" />
+            <input type="text" name="permanent" placeholder="Permanent Address" />
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+
+        <fieldset>
+            <h2 class="fs-title">Nominee Details</h2>
+            <h3 class="fs-subtitle">About your nominee</h3>
+            <input type="text" name="nomname" placeholder="Name" />
+            <input type="text" name="nomfather" placeholder="Father Name" />
+            <input type="text" name="nommother" placeholder="Mother Name" />
+            <input type="text" name="nommobile" placeholder="Mobile Number" />
+            <input type="date" id="birthday" name="nombirthday">
+            <input type="number" name="nomaadhar" placeholder="Aadhar Number" />
+            <input type="number" name="nompan" placeholder="Pan card Number" />
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Social Profiles</h2>
+            <h3 class="fs-subtitle">Your presence on the social network</h3>
+
+            <input type="number" name="aadhar" placeholder="Aadhar Number" />
+            <input type="number" name="pan" placeholder="Pan card Number" />
+            <input type="text" name="bank" placeholder="Bank Name" />
+            <input type="text" name="branch" placeholder="Branch Name" />
+            <input type="text" name="accountholder" placeholder="Account Holder Name" />
+            <input type="text" name="account" placeholder="Account Number" />
+            <input type="text" name="IFSC" placeholder="IFSC" />
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <input type="button" name="next" class="next action-button" value="Next" />
+        </fieldset>
+        <fieldset>
+            <h2 class="fs-title">Designation</h2>
+            <input type="text" name="Designation" placeholder="Designation" />
+            <input type="text" name="percentage" placeholder="Percentage" />
+
+            <input type="button" name="previous" class="previous action-button" value="Previous" />
+            <button type="submit" class="action-button">Submit</button>
+        </fieldset>
+
+    </form>
+    <script src="app.js"></script>
+</body>
+
+</html>

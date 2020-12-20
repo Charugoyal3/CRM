@@ -1,0 +1,220 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script language="javascript" src="../cal2.js"></script>
+
+    <script language="javascript" src="../cal_conf2.js"></script>
+
+    <!-- <script type="text/javascript" src="../admin/stmenu.js"></script> -->
+
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Plot Status</title>
+    <script language="javascript" src="../popup.js"></script>
+
+    <link href="../menu_old.css" rel="stylesheet" type="text/css" />
+
+    <link href="../menu.css" rel="stylesheet" type="text/css" />
+
+    <!-- <style type="text/css">
+        @import url("css_static/mm_health_nutr.css");
+    </style> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="../hint-textbox.js"></script>
+
+    <link href="../styleplot.css" rel="stylesheet" type="text/css" />
+
+    <style type="text/css" xml:space="preserve">
+        .error_strings {
+            font-family: Verdana;
+            font-size: 10px;
+            color: #000000;
+            background-color: #ff0;
+        }
+    </style>
+    <script language="JavaScript" src="../gen_validatorv4.js" type="text/javascript" xml:space="preserve"></script>
+    <!-- <script>
+        function all_project() {
+            document.getElementById("place").innerHTML = ""
+        }
+        function projectwise() {
+            document.getElementById("place").innerHTML = "<select name='pl_cat'><option>Corner East Phase</option><option>Corner West Phase</option><option>Corner South Phase</option><option>Corner North Phase</option><option>Corner East Phase,Front Of park</option><option>Corner West Phase,Front Of Park</option><option>Corner South Phase,Front Of Park</option><option>Corner North Phase,Front Of park</option><option>Intermittent Plot</option><option>Intermittent Plot East Phase</option><option>Intermittent Plot West Phase</option><option>Intermittent Plot South Phase</option><option>Intermittent Plot North Phase</option><option>Intermittent Plot East Phase,Front Of Park</option><option>Intermittent Plot West Phase,Front Of Park</option><option>Intermittent Plot South Phase,Front Of Park</option><option>Intermittent Plot North Phase,Front Of Park</option><option>Corner East Front Of Resort </option><option>Corner West Front Of Resort </option><option>Corner South Front Of Resort </option><option>Corner North Front Of Resort </option><option>Intermittent Plot East Face Front Of Resort</option><option>Intermittent Plot West Face Front Of Resort</option><option>Intermittent Plot South Face Front Of Resort</option><option>Intermittent Plot North Face Front Of Resort</option><option>Corner East South</option><option>Corner East North</option><option>Corner West south</option><option>Corner West North</option><option>ADJACENT TO PARK</option><option>EAST PHASE FRONT OF COMMERCIAL </option><option>WEST PHASE FRONT OF COMMERCIAL </option><option>CORNER WEST PHASE FRONT OF COMMERCIAL </option><option>EAST PHASE CORNER PLOT FRONT OF COMMERCIAL</option><option>intermittent plot weast phase,front of commercial</option><option>INTERMITTENT PLOT WEST PHASE,FRONT OF COMMERCIAL</option><option>INTERMITTENT PLOT EAST PHASE, FRONT OF COMMERCIAL</option><option>CORNER EAST PHASE FRONT OF COMMERCIAL</option><option>EAST FACE</option><option>WEST FACE</option><option>WIDE ROAD + CORNER EAST FACE</option ><option>WIDE ROAD + CORNER WEST FACE</option><option>CORNER</option><option>PARK FACING</option></select > "
+        }
+
+        function areawise() {
+            document.getElementById("place").innerHTML = "<select name='pl_cat'><option value=30,60>----30&Chi;60 sq/ft----</option><option value=30,50>----30&Chi;50 sq/ft----</option><option value=20,50>----20&Chi;50 sq/ft----</option><option value=25,50>----25&Chi;50 sq/ft----</option><option value=18,40>----18&Chi;40 sq/ft----</option><option value=35,40>----35&Chi;40 sq/ft----</option><option value=37,40>----37&Chi;40 sq/ft----</option><option value=40,75>----40&Chi;75 sq/ft----</option><option value=40,60>----40&Chi;60 sq/ft----</option><option value=40,30>----40&Chi;30 sq/ft----</option><option value=40,50>----40&Chi;50 sq/ft----</option><option value=50,100>----50&Chi;100 sq/ft----</option><option value=50,50>----50&Chi;50 sq/ft----</option><option value=50,70>----50&Chi;70 sq/ft----</option><option value=100,200>----100&Chi;200 sq/ft----</option><option value=40,40>----40&Chi;40 sq/ft----</option><option value=45,40>----45&Chi;40 sq/ft----</option><option value=45,30>----45&Chi;30 sq/ft----</option><option value=30,40>----30&Chi;40 sq/ft----</option><option value=45,25>----45&Chi;25 sq/ft----</option><option value=22.5,40>----22.5&Chi;40 sq/ft----</option><option value=40.5,40>----40.5&Chi;40 sq/ft----</option><option value=30,60.75>----30&Chi;60.75 sq/ft----</option><option value=32.22,60>----32.22&Chi;60 sq/ft----</option><option value=30,60>----30&Chi;60 sq/ft----</option><option value=30,50>----30&Chi;50 sq/ft----</option><option value=25,50>----25&Chi;50 sq/ft----</option><option value=20,50>----20&Chi;50 sq/ft----</option><option value=50,60>----50&Chi;60 sq/ft----</option><option value=50,50>----50&Chi;50 sq/ft----</option><option value=40,60>----40&Chi;60 sq/ft----</option><option value=40,50>----40&Chi;50 sq/ft----</option><option value=35,50>----35&Chi;50 sq/ft----</option><option value=35,40>----35&Chi;40 sq/ft----</option><option value=30,40>----30&Chi;40 sq/ft----</option><option value=25,40>----25&Chi;40 sq/ft----</option><option value=20,40>----20&Chi;40 sq/ft----</option><option value=16,40>----16&Chi;40 sq/ft----</option><option value=16.4,39.5>----16.4&Chi;39.5 sq/ft----</option><option value=15,35>----15&Chi;35 sq/ft----</option><option value=23,40>----23&Chi;40 sq/ft----</option><option value=38,40>----38&Chi;40 sq/ft----</option><option value=16,40>----16&Chi;40 sq/ft----</option><option value=35,60>----35&Chi;60 sq/ft----</option></select>"
+        }
+    </script> -->
+    <!-- <script type="text/javascript">
+        function showUser(str) {
+            if (str == "") {
+                document.getElementById("txtHint").innerHTML = "";
+                return;
+            }
+            if (window.XMLHttpRequest) {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+                xmlhttp = new XMLHttpRequest();
+            } else { // code for IE6, IE5
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function () {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "project_blcode.php?q=" + str, true);
+            xmlhttp.send();
+        }
+    </script> -->
+</head>
+
+<body onload="showUser(pr.value)">
+    <form id="sampleform" name="sampleform" method="post" action="" enctype="multipart/form-data">
+        <table width="1024" border="0" align="center">
+            <tr>
+                <td>
+                    <table width="1024" border="0">
+                        <tr>
+                            <td colspan="11"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                                    codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0"
+                                    width="970" height="60">
+                                    <param name="movie" value="banner_admin1.swf" />
+                                    <param name="quality" value="high" />
+                                    <param name="allowScriptAccess" value="always" />
+                                    <param name="wmode" value="transparent">
+                                    <embed src="banner_admin1.swf" quality="high" type="application/x-shockwave-flash"
+                                        WMODE="transparent" width="1024" height="60"
+                                        pluginspage="http://www.macromedia.com/go/getflashplayer"
+                                        allowScriptAccess="always" />
+                                </object></td>
+                        </tr>
+                        <tr>
+                            <td colspan="11">
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="4"><span class="font_normal">Project Name:</span>
+                                <font color="#800080" style="font-size:14px; font-weight:bold;">
+                                    Jyotiraj
+                                    <input name="pr" type="hidden" id="pr" value="TRUSTUS QUEBIC CITY" />
+                                </font>
+                            </td>
+                            <td colspan="2"><span class="font_normal">Block Code:</span>
+                                <font color="#800080" style="font-size:14px; font-weight:bold;">
+                                    All </font>
+                            </td>
+                            <!-- <td colspan="5"><span class="font_normal">Plot Category/Dimension:</span>
+                                <font color="#800080" style="font-size:14px; font-weight:bold;">
+                                </font>
+                            </td> -->
+                        </tr>
+                        <!-- <tr>
+                            <td height="21" colspan="11"><img src="./admin/img/back_img.jpg"
+                                    onclick="history.back(-1)" /></td>
+                        </tr> -->
+                        <!-- <tr>
+                            <td height="42" colspan="4"><span class="font_normal_violet">
+                                    <input type="radio" name="RadioGroup1" value="0" id="RadioGroup1_0"
+                                        onchange="all_project();" checked="checked" />
+                                    All
+                                    &nbsp;
+                                    <input type="radio" name="RadioGroup1" value="1" id="RadioGroup1_1"
+                                        onchange="projectwise();" />
+                                    Plot Category &nbsp;
+                                    <input type="radio" name="RadioGroup1" value="2" id="RadioGroup1_1"
+                                        onchange="areawise();" />
+                                    Dimension</span></td>
+                            <td colspan="4">
+                                <div id="place"></div>
+                            </td>
+                            <td><select name="cat">
+                                    <option value="ALL">----ALL----</option>
+                                    <option value="0">Available</option>
+                                    <option value="1">Booked</option>
+                                    <option value="2">Hold</option>
+                                    <option value="3">Sold Out</option>
+                                </select></td>
+                            <td colspan="2">
+                                <div id="txtHint">
+                                    <font color="#D21B06">Block Code</font><img src="admin/img/working.gif" />
+                                </div>
+                            </td>
+
+                        </tr> -->
+                        <!-- <tr>
+                            <td colspan="2" class="font_blue_small">Total Plots:<span class="font_red">(
+                                    711 )</span></td>
+                            <td width="4">&nbsp;</td>
+                            <td width="108" class="font_blue_small">Available:<span class="font_red">(
+                                    294)</span></td>
+                            <td width="26">&nbsp;</td>
+                            <td width="104" class="font_blue_small">Hold<span class="font_red">(
+                                    32)</span></td>
+                            <td width="43">&nbsp;</td>
+                            <td width="121" class="font_blue_small">Booked:<span class="font_red">(
+                                    264)</span></td>
+                            <td width="99">&nbsp;</td>
+                            <td colspan="2" class="font_blue_small">Sold Out:<span class="font_red">(
+                                    121 )</span></td>
+                        </tr> -->
+                        <tr>
+                            <td width="35"></td>
+                            <td width="100">&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td width="68">&nbsp;</td>
+                            <td width="270">&nbsp;</td>
+                        </tr>
+
+                        <table width="970" border="0">
+                            <% var index=0 %>
+                            <% var j=0 %>
+                            <% for(j =1;j<=(size+7)/8;j++){%>
+                            <tr>
+                                <% var i=0 %>
+                                <% while(i<=8){%>
+                                <td>&nbsp;</td>
+                                <td class="shadow_without_Border"
+                                    style="vertical-align:bottom; background-repeat:no-repeat;"
+                                    background='./admin/img/booked.jpg' height="50" width="50" valign="bottom">
+                                    <div
+                                        onmouseover="showBox('<p><strong>Plot Information: <%= plot[index].status %></strong><hr><strong>Plot Breadth:</strong>&nbsp;<%= plot[index].plotbreadth%>(ft)<br><strong>Plot Length:</strong>&nbsp;&nbsp;<%= plot[index].plotlength%>(ft)<br><strong>Total Size:</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=plot[index].plotsize%>(sq/ft)<br><br><strong>Description:</strong>&nbsp;&nbsp;&nbsp;<%=plot[index].location%><p>', this, event)">
+                                        <span class="font_blue1"><%= plot[index].id%></span></div>
+                                    <a href="/plot/<%= plot[index]._id %>/update"><i class="fa fa-pencil"></i></a>
+                                    <!-- <a href="<%= plot._id%>"><i class="fa fa-trash"></i></a> -->
+                                </td>
+                                <td>&nbsp;</td>
+                                <% if(index==size-1){%>
+                                <%break;%>
+                                <%}%>
+                                <% index=index+1;%>
+                                <% i=i+1;
+                                };%>
+
+                            </tr>
+                            <% }%>
+                        </table>
+
+
+                    </table>
+    </form>
+</body>
+<script language="JavaScript" type="text/javascript" xml:space="preserve">
+    var frmvalidator = new Validator("sampleform");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+
+    frmvalidator.addValidation("project_name", "req", "Please Select Project..!");
+
+
+</script>
+
+</html>
