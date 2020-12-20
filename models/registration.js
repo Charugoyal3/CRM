@@ -1,7 +1,11 @@
 const mongoose = require("mongoose");
+const { db } = require("./subass");
 
 var registrationModel = new mongoose.Schema(
     {
+        userid:{
+            type:String
+        },
         email: {
             type:String
         },
@@ -56,7 +60,7 @@ var registrationModel = new mongoose.Schema(
             type:Number
         },
         nompan:{
-            type:Number
+            type:String
         },
         
         aadhar:{
@@ -87,6 +91,8 @@ var registrationModel = new mongoose.Schema(
         percentage:{
             type:Number
         },
+        //usertype-admin,asso,subasso
+        //
 
         subass: [
             {

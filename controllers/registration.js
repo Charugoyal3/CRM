@@ -9,6 +9,10 @@ const getRegistration = function (req, res) {
 
 const postRegistration = async (req, res) => {
     var data = new Registration(req.body);
+    const ass = await Registration.find({});
+    console.log(ass.length);
+    data.userid="jyo_0"+ass.length;
+ 
    try{
        const item= await data.save();
        res.redirect("index");

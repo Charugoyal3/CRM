@@ -22,12 +22,13 @@
             <li>Personal Details</li>
             <li>Nominee Details</li>
             <li>Social Profiles</li>
-            <li>Designation</li>
+            <!-- <li>Designation</li> -->
         </ul>
         <!-- fieldsets -->
         <fieldset>
             <h2 class="fs-title">Create your account for Associate</h2>
             <h3 class="fs-subtitle">This is step 1</h3>
+            <input type="text" name="userid" placeholder="User ID" hidden />
             <input type="text" name="email" placeholder="Email" />
 
             <input type="password" name="pass" placeholder="Password" />
@@ -73,16 +74,17 @@
             <input type="text" name="account" placeholder="Account Number" />
             <input type="text" name="IFSC" placeholder="IFSC" />
             <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <input type="button" name="next" class="next action-button" value="Next" />
+            <!-- <input type="button" name="next" class="next action-button" value="Next" /> -->
+            <button type="submit" class="action-button">Submit</button>
         </fieldset>
-        <fieldset>
+        <!-- <fieldset>
             <h2 class="fs-title">Designation</h2>
             <input type="text" name="Designation" placeholder="Designation" />
             <input type="text" name="percentage" placeholder="Percentage" />
 
-            <input type="button" name="previous" class="previous action-button" value="Previous" />
-            <button type="submit" class="action-button">Submit</button>
-        </fieldset>
+            <input type="button" name="previous" class="previous action-button" value="Previous" /> -->
+
+        <!-- </fieldset> -->
 
     </form>
     <script src="app.js"></script>

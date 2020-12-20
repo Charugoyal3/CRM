@@ -54,6 +54,20 @@ const getteamearning=async(req,res)=>{
 
 
 const postadminlogin = async (req,res,next) =>{
+    // User.findOne({ email:req.body.email},function(err,user){
+    //     if(err){console.log('Error in signin'); return;}
+    //     if(user){
+    //         if(user.password!=req.body.pass){
+    //             return res.send("Pass incorrect");
+    //         }
+    //         //handle session creation
+    //         if(user.usertype==admin){
+    //             //redirect to admin dashboard
+    //         }else if(user.usertype==subassociare{}){}
+    //         return res.redirect("index");
+
+    //     }
+    
   Admin.findOne({ email:req.body.email},function(err,user){
             if(err){console.log('Error in signin'); return;}
             if(user){
@@ -65,7 +79,8 @@ const postadminlogin = async (req,res,next) =>{
     
             }
             else{
-              Registration.findOne({ email:req.body.email},function(err,user){
+              Registration.findOne({ userid:req.body.email},function(err,user){
+                  console.log(req.body.userid);
                 if(err){console.log('Error in signin'); return;}
                 if(user){
                     if(user.pass!=req.body.pass){
@@ -75,7 +90,7 @@ const postadminlogin = async (req,res,next) =>{
         
                 }
                 else{
-                  Subass.findOne({ email:req.body.email},function(err,user){
+                  Subass.findOne({ userid:req.body.email},function(err,user){
                     if(err){console.log('Error in signin'); return;}
                     if(user){
                         if(user.pass!=req.body.pass){

@@ -82,10 +82,10 @@ body {
 }
 /*progressbar*/
 #progressbar {
-	margin-bottom: 30px;
-	overflow: hidden;
-	/*CSS counters to number the steps*/
-	counter-reset: step;
+	margin-bottom: 21px;
+    overflow: hidden;
+    counter-reset: step;
+    margin-left: 80px;
 }
 #progressbar li {
 	list-style-type: none;

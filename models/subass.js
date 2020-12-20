@@ -2,6 +2,13 @@ const mongoose = require("mongoose");
 
 var subassModel = new mongoose.Schema(
     {
+        userid:{
+            type:String
+        },
+        assid:{
+            type:String,
+        },
+
         email: {
             type:String
         },
@@ -56,7 +63,7 @@ var subassModel = new mongoose.Schema(
             type:Number
         },
         nompan:{
-            type:Number
+            type:String
         },
         
         aadhar:{

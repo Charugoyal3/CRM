@@ -7,34 +7,37 @@ const getsubass = async (req, res) => {
     if (subass) res.status(200).render('index', {
         subass: subass
     });
-    // console.log(subass);
     return "subass not found!";
 }
 
 const getsubassform = async (req, res) => {
   
-    // console.log(req.params);
     const reg = await Registration.findById(req.params.registrationId);
     if (reg) res.status(200).render('subass', {
         reg:reg
     });
     return "ID not Found";
 };
-
+//admin1--5 --a2, a2 -- 4-- s1, s1- 3 --s2//plot p1
 
 const postsubass = async (req, res) => {
      var subass = new Subass(req.body);
+     subass.assid=req.params.registrationId;
+     const ass = await Registration.find({});
+     const subasso = await Subass.find({});
+
+    // console.log(ass.length);
+    subass.userid="jyo_0"-ass.length+subasso.length;
+    
+    
     try {
         const registration = await Registration.findById(req.params.registrationId);
         if (registration != null) {
             if (subass) {
                 const newsubass = new Subass(subass);
                 const savedsubass = await newsubass.save();
-
                 registration.subass.unshift(savedsubass);
                 registration.save();
-                console.log("saved");
-
                 res.redirect("/");
 
             } else {
